@@ -2,7 +2,6 @@ package telasGitLogin;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,6 +17,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.SystemColor;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
 
 public class Login extends JFrame {
 
@@ -56,6 +61,19 @@ public class Login extends JFrame {
 		painelGeral.add(painelEsquerdo);
 		painelEsquerdo.setLayout(null);
 
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(10, 11, 97, 21);
+		painelEsquerdo.add(menuBar);
+
+		JMenu mnNewMenu = new JMenu("New menu");
+		menuBar.add(mnNewMenu);
+
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem);
+
+		JMenuItem menuItem = new JMenuItem("New menu item");
+		mnNewMenu.add(menuItem);
+
 		JPanel painelRodape = new JPanel();
 		painelRodape.setBackground(Color.WHITE);
 		painelRodape.setBounds(170, 413, 564, 60);
@@ -80,7 +98,7 @@ public class Login extends JFrame {
 
 		JButton jbSairVistoria = new JButton("Sair");
 		jbSairVistoria.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent eventoSair) {
+			public void actionPerformed(ActionEvent eventoSair) {				
 			}
 		});
 		jbSairVistoria.setBounds(399, 11, 100, 30);
@@ -150,7 +168,9 @@ public class Login extends JFrame {
 		painelCentral.add(jlLocalVistoria);
 
 		JComboBox<String> jcbAreaVistoria = new JComboBox<String>();
-		jcbAreaVistoria.setModel(new DefaultComboBoxModel(new String[] {"", "Acesso primeiro", "Acesso segundo", "Acesso terceiro", "Acesso quarto", "Case acesso 1\u00BA", "Case acesso 2\u00BA", "Case acesso 3\u00BA"}));
+		jcbAreaVistoria.setModel(
+				new DefaultComboBoxModel(new String[] { "", "Acesso primeiro", "Acesso segundo", "Acesso terceiro",
+						"Acesso quarto", "Case acesso 1\u00BA", "Case acesso 2\u00BA", "Case acesso 3\u00BA" }));
 		jcbAreaVistoria.setBounds(167, 101, 206, 20);
 		painelCentral.add(jcbAreaVistoria);
 
@@ -160,7 +180,7 @@ public class Login extends JFrame {
 		painelCentral.add(jlAvaliacaoVistoria);
 
 		JComboBox<String> jcbAvaliacaoVistoria = new JComboBox<String>();
-		jcbAvaliacaoVistoria.setModel(new DefaultComboBoxModel(new String[] {"", "5.1", "5.5"}));
+		jcbAvaliacaoVistoria.setModel(new DefaultComboBoxModel(new String[] { "", "5.1", "5.5" }));
 		jcbAvaliacaoVistoria.setBounds(453, 101, 86, 20);
 		painelCentral.add(jcbAvaliacaoVistoria);
 
@@ -170,7 +190,8 @@ public class Login extends JFrame {
 		painelCentral.add(jlTipoVistoria);
 
 		JComboBox<String> jcbTipoVistoira = new JComboBox<String>();
-		jcbTipoVistoira.setModel(new DefaultComboBoxModel(new String[] {"", "Di\u00E1ria b\u00E1sica", "Quinzenal", "Mensal Seguran\u00E7a"}));
+		jcbTipoVistoira.setModel(new DefaultComboBoxModel(
+				new String[] { "", "Di\u00E1ria b\u00E1sica", "Quinzenal", "Mensal Seguran\u00E7a" }));
 		jcbTipoVistoira.setBounds(167, 70, 207, 20);
 		painelCentral.add(jcbTipoVistoira);
 
